@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ page.title }} | {{ site.name }}</title>
+
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Ultra" rel="stylesheet">
+
+</head>
+<body>
+    <a href="#page-main">Skip to main content</a>
+
+    {% include header.html %}
+
+    <main id="page-main" class="page-main page-constraint page-constraint--large">
+        {% assign page_title = page.title %}
+        {% if page.title == "home" %}
+            {% assign page_title = site.name %}
+        {% endif %}
+        <h1 class="page-constraint">{{ page_title }}</h1>
+
+        {{ page.content }}
+    </main>
+
+    {% include footer.html %}
+
+</body>
+</html>
