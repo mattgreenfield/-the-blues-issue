@@ -1,0 +1,27 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.13.0",
+    "gulp": "^3.9.0",
+    "gulp-a11y": "^0.1.1",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-concat": "^2.4.1",
+    "gulp-gm": "^0.0.8",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-shell": "^0.5.1",
+    "gulp-webp": "^2.3.0",
+    "imagemin-pngquant": "^5.0.0",
+    "penthouse": "0.9.15"
+  },
+  "author": "Matt Greenfield",
+  "license": "ISC"
+}

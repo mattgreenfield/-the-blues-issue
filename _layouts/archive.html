@@ -5,10 +5,16 @@ layout: default
 {% if page.title == "Archive" %}
     <ul class="page-constraint reset-list">
     {% for image in site.static_files %}
-        {% if image.path contains 'images/' %}
+        {% if image.path contains 'archive' %}
+        {% if image.extname contains 'jpg' %}
             <li>
-                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                <picture>
+                    <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.webp" type="image/webp">
+                    <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
+                    <img src="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg"  alt="">
+                </picture>
             </li>
+        {% endif %}
         {% endif %}
     {% endfor %}
     </ul>
