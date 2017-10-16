@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% if page.title == "Archive" %}
+    <ul class="page-constraint reset-list">
+    {% for image in site.static_files %}
+        {% if image.path contains 'images/' %}
+            <li>
+                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}

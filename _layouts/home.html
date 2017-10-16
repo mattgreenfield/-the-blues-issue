@@ -1,0 +1,33 @@
+---
+layout: default
+classes: "page-constraint page-constraint--large"
+---
+
+<section>
+    <h2>Upcoming Gigs</h2>
+    <ul class="reset-list" id='gigs-list' data-limit="1">
+        <li>Loading...</li>
+    </ul>
+    <a href="/gigs.html">View All</a>
+</section>
+
+<section>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vw6EMW_E8eE" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section>
+    <h2>Want to buy our music?</h2>
+    <a href="/discography.html" class="button">View Music</a>
+</section>
+
+<section>
+    <ul class="reset-list" id="quote-slider">
+        {% for quote in site.quotes %}
+            <li>
+                <blockquote>{{ quote.quote }}</blockquote>
+                {{ quote.author }}
+            </li>
+        {% endfor %}
+    </ul>
+
+</section>

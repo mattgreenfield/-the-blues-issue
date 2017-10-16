@@ -2,6 +2,7 @@
 ---
 
 $blue: #263791;
+$blue: #4A5C9C;
 
 * {
     box-sizing: border-box;
@@ -46,6 +47,22 @@ img {
 }
 
 
+//
+// Helpers
+
+.a11y-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.a11y-hidden-reset {
+    position: static;
+    width: auto;
+    height: auto;
+}
 
 //
 // Resets
@@ -65,7 +82,7 @@ img {
 
 // Page Constraint
 .page-constraint {
-    max-width: 30rem;
+    max-width: 35rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -83,6 +100,28 @@ h1 {
     text-align: center;
 }
 
+// Inputs
+
+.label {
+    display: block;
+}
+
+.text-input {
+    width: 100%;
+    font-size: 1em;
+    padding: .8em;
+    border: 3px solid $blue;
+}
+
+.button {
+    background: $blue;
+    color: white;
+    border: 0;
+    font-size: 1em;
+    padding: .6em 1em;
+    text-decoration: none;
+    display: inline-block;
+}
 
 //
 // Lists
@@ -130,5 +169,27 @@ h1 {
     .button {
         flex-grow: 0;
         flex-basis: auto;
+    }
+}
+
+
+//
+// Skip Link
+
+a[href="#page-main"] {
+
+    @extend .a11y-hidden;
+
+    &:focus {
+        @extend .a11y-hidden-reset;
+    }
+}
+
+
+//
+// Carousel
+.carousel {
+    img {
+        max-height: 350px;
     }
 }

@@ -11,33 +11,67 @@
 
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '666554986807078',
+            xfbml      : true,
+            version    : 'v2.10'
+            });
+
+            // log page view
+            FB.AppEvents.logPageView();
+
+            // there are race condition problems with this. gigs() doesn't always exist
+            var gigsList = document.getElementById('gigs-list');
+            if(gigsList){
+                $(document).ready(function(){
+                    gigs().init();    
+                });
+            }
+
+        };
+
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+     </script>
 
     {% include header.html %}
 
-    <main id="page-main" class="page-main page-constraint page-constraint--large">
+    <main id="page-main" class="{{ layout.classes }}">
+
         {% assign page_title = page.title %}
         {% if page.title == "home" %}
             {% assign page_title = site.name %}
         {% endif %}
-        <h1 class="page-constraint">{{ page_title }}</h1>
+        <h1>{{ page_title }}</h1>
 
-        {{ page.content }}
-
-        {% if page.title == "Archive" %}
-            <ul class="page-constraint reset-list">
-            {% for image in site.static_files %}
-                {% if image.path contains 'images/' %}
-                    <li>
-                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                    </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-        {% endif %}
+        {{ content }}
 
     </main>
 
     {% include footer.html %}
 
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+    <!-- Moment -->
+    <script src="assets/scripts/moment.min.js"></script>
+    
+    <!-- Our scripts -->
+    <script src="assets/scripts/scripts.js"></script>
+    
 </body>
 </html>

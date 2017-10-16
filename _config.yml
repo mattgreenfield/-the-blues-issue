@@ -1,1 +1,22 @@
 name: "The Blues Issue"
+url: www.thebluesissue.co.uk
+
+navigation:
+  - title: Home
+    url: "/"
+  - title: About
+    url: "/about.html"
+  - title: Gigs
+    url: "/gigs.html"
+  - title: Discography
+    url: "/discography.html"
+  - title: "Archive"
+    url: "/archive.html"
+  - title: Contact
+    url: "/contact.html"
+
+quotes:
+  - quote: By far the hardest working, blues band in the south coast.
+    author: John Smith
+  - quote: By far the hardest working, blues band in the south coast.
+    author: John Smith

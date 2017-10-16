@@ -3,11 +3,5 @@
 <div class="logo">{{ site.name}}</div>
 
 <nav role="navigation">
-    <ul class="reset-list list--inline">
-        {% for page in site.pages %}
-        <li>
-            <a href="{{ page.url }}">{{ page.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+    {% include navigation.html %}
 </nav>

@@ -2,3 +2,39 @@
 title: "Contact"
 layout: default
 ---
+
+<div class="page-constraint page-constraint--large">
+
+    <form class="form" action="https://formspree.io/gmattgreenfield@gmail.com" method="post">
+        <ul class="reset-list">
+            <li>
+                <label class="label" for="contact-name">Your Name</label>
+                <input class="text-input" id="contact-name" type="text" name="name"/>
+            </li>
+            <li>
+                <label class="label" for="contact-email">Your Email</label>
+                <input class="text-input" id="contact-email" required type="email" name="_replyto"/>
+            </li>
+            <li>
+                <label class="label" for="contact-message">Your Message</label>
+                <textarea class="text-input" id="contact-message" required name="message" id="" cols="30" rows="10"></textarea>
+            </li>
+            <li>
+                <input class="button" type="submit" value="Send">
+            </li>
+        </ul>
+
+        <input type="hidden" name="_next" value="//{{site.url}}/thanks.html" />
+        <input type="hidden" name="_subject" value="Message from Blues Issue Website" />
+        <input type="hidden" name="_cc" value="thebluesissue@gmail.com" />
+    </form>
+
+    <aside>
+        <h2>Looking for gigs?</h2>
+        <a href="/gigs.html" class="button">View Gigs</a>
+
+        <h2>Want to buy our music?</h2>
+        <a href="/discography.html" class="button">View Music</a>
+    </aside>
+
+</div>

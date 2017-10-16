@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% if page.title == "Discography" %}
+    <ul class="page-constraint reset-list">
+        {% for album in page.albums %}
+            <li>
+                <h2>{{ album.name }}</h2>
+                <span>{{ album.released }}</span>
+                <p>{{ album.info }}</p>
+            </li>
+        {% endfor; %}
+    </ul>
+{% endif %}
