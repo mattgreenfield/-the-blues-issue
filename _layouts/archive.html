@@ -3,16 +3,18 @@ layout: default
 ---
 
 {% if page.title == "Archive" %}
-    <ul class="page-constraint reset-list">
+    <ul class="page-constraint reset-list baguette-gallery">
     {% for image in site.static_files %}
         {% if image.path contains 'archive' %}
         {% if image.extname contains 'jpg' %}
             <li>
-                <picture>
-                    <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.webp" type="image/webp">
-                    <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
-                    <img src="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg"  alt="">
-                </picture>
+                <a href="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg">
+                    <picture>
+                        <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.webp" type="image/webp">
+                        <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
+                        <img src="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg"  alt="">
+                    </picture>
+                </a>
             </li>
         {% endif %}
         {% endif %}

@@ -1,5 +1,8 @@
 
 $blue: #4A5C9C;
+$font-family-title: 'Ultra', serif;
+
+@import "node_modules/baguettebox.js/src/baguetteBox.scss";
 
 * {
     box-sizing: border-box;
@@ -12,6 +15,7 @@ body {
 
 html {
     padding: 10px;
+    padding-top: 60px;
     font-size: 1.1em;
 }
 
@@ -99,11 +103,39 @@ img {
 h1 {
     background-color: $blue;
     color: white;
-    font-family: 'Ultra', serif;
+    font-family: $font-family-title;
     font-weight: normal;
     text-align: center;
 }
 
+//
+// Page Navigation
+.page-nav {
+    font-family: $font-family-title;
+    font-size: 1.3em;
+
+    a {
+        text-decoration: none;
+        color: $blue;
+    }
+
+    li {
+        margin-right: .5em;
+        margin-top: 0;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+//
+// logo
+
+.logo {
+    margin-top: -60px;
+}
+
+//
 // Inputs
 
 .label {

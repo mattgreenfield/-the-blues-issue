@@ -45,9 +45,9 @@ var gulp = require('gulp'),
 
 // Paths
 var paths = {
-    scripts: ['scripts/*.js'],
+    scripts: ['node_modules/baguettebox.js/src/baguetteBox.js', 'scripts/*.js'],
     images: ['images/*', 'images/**/*'],
-    styles: ['styles.scss','css/*/*.scss']
+    styles: ['styles.scss']
 };
 
 var port = 4000;
@@ -60,9 +60,7 @@ var port = 4000;
 // Task: Sass
 gulp.task('sass', function () {
 
-    // use the above file path variable to find sass
     gulp.src(paths.styles)
-
     .pipe(sass({style: 'compressed'}))
     .pipe(prefix(["last 1 version", "> 1%", "ie 8", "ie 7"],{map: false }))
     .pipe(minifyCSS())

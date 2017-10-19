@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
+    "baguettebox.js": "^1.9.1",
     "express": "^4.13.0",
     "gulp": "^3.9.0",
     "gulp-a11y": "^0.1.1",

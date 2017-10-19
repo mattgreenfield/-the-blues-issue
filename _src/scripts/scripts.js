@@ -122,3 +122,6 @@ $('#quote-slider').slick({
   speed: 300,
   slidesToShow: 1,
 });
+
+// Lightbox / Gallery
+baguetteBox.run('.baguette-gallery');
