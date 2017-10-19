@@ -21,7 +21,9 @@
     "gulp-shell": "^0.5.1",
     "gulp-webp": "^2.3.0",
     "imagemin-pngquant": "^5.0.0",
-    "penthouse": "0.9.15"
+    "jquery": "^3.2.1",
+    "penthouse": "0.9.15",
+    "slick-carousel": "^1.8.1"
   },
   "author": "Matt Greenfield",
   "license": "ISC"

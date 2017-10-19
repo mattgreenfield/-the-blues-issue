@@ -45,7 +45,7 @@ var gulp = require('gulp'),
 
 // Paths
 var paths = {
-    scripts: ['node_modules/baguettebox.js/src/baguetteBox.js', 'scripts/*.js'],
+    scripts: ['node_modules/baguettebox.js/src/baguetteBox.js', 'node_modules/slick-carousel/slick/slick.js', 'scripts/*.js'],
     images: ['images/*', 'images/**/*'],
     styles: ['styles.scss']
 };

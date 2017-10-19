@@ -2,7 +2,12 @@
 $blue: #4A5C9C;
 $font-family-title: 'Ultra', serif;
 
+// Lightbox
 @import "node_modules/baguettebox.js/src/baguetteBox.scss";
+
+// Slick
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
 
 * {
     box-sizing: border-box;
@@ -78,7 +83,7 @@ img {
 .reset-list {
     list-style-type: none;
     padding-left: 0;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 
@@ -98,6 +103,13 @@ img {
     max-width: 1200px;
 }
 
+//
+// Layout side col
+.layout-side-col {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 20px;
+}
 
 // Page Heading
 h1 {
@@ -121,10 +133,25 @@ h1 {
 
     li {
         margin-right: .5em;
-        margin-top: 0;
         &:last-child {
             margin-right: 0;
         }
+    }
+}
+
+//
+// Page Footer
+.page-footer {
+    display: flex;
+    flex-wrap: wrap;
+
+    small {
+        flex-basis: 100%;
+        margin-top: 0;
+    }
+
+    .list--inline:first-child {
+        flex: 1;
     }
 }
 
@@ -147,6 +174,7 @@ h1 {
     font-size: 1em;
     padding: .8em;
     border: 3px solid $blue;
+    margin-top: 0;
 }
 
 .button {
@@ -172,6 +200,7 @@ h1 {
 .list--inline {
     > li {
         display: inline-block;
+        margin-top: 0;
     }
 }
 
@@ -244,5 +273,5 @@ a[href="#page-main"] {
     padding: 20px 0;
     background-image: url('data:image/svg+xml;utf8,<svg width="243" height="276" viewBox="0 0 243 276" xmlns="http://www.w3.org/2000/svg"><path d="M0 10.5L243 0l-34.5 276-171.004-19" fill="#EFEFEF" fill-rule="evenodd"/></svg>');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
