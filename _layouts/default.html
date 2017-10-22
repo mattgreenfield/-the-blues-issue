@@ -50,7 +50,9 @@
         {% if page.title == "home" %}
             {% assign page_title = site.name %}
         {% endif %}
-        <h1>{{ page_title }}</h1>
+        <div class="page-constraint page-constraint--large">
+            <h1>{{ page_title }}</h1>
+        </div>
 
         {{ content }}
 
@@ -59,7 +61,7 @@
     {% include footer.html %}
 
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Our scripts -->
     <script src="/assets/js/scripts.min.js"></script>

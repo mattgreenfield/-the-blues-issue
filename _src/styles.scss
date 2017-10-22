@@ -108,7 +108,7 @@ img {
 .layout-side-col {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 40px;
 }
 
 // Page Heading
@@ -210,6 +210,7 @@ h1 {
 .gig {
     display: flex;
     align-items: flex-end;
+    text-transform: capitalize;
 }
 
 .gig__date {

@@ -10,9 +10,9 @@ layout: default
             <li>
                 <a href="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg">
                     <picture>
-                        <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.webp" type="image/webp">
-                        <source srcset="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
-                        <img src="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg"  alt="">
+                        <source data-srcset="{{ site.baseurl }}assets/img/thumb/archive/{{ image.basename }}.webp" type="image/webp">
+                        <source data-srcset="{{ site.baseurl }}assets/img/thumb/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
+                        <img data-src="{{ site.baseurl }}assets/img/thumb/archive/{{ image.basename }}.jpg"  alt="" class="lazyload">
                     </picture>
                 </a>
             </li>

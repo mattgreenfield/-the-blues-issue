@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     // gifsicle = require('imagemin-gifsicle'),
     // optipng = require('imagemin-optipng'),
     webp = require('gulp-webp'),
+    imageResize = require('gulp-image-resize'),
 
     // Serving to localhost
     express = require('express'),
@@ -45,7 +46,12 @@ var gulp = require('gulp'),
 
 // Paths
 var paths = {
-    scripts: ['node_modules/baguettebox.js/src/baguetteBox.js', 'node_modules/slick-carousel/slick/slick.js', 'scripts/*.js'],
+    scripts: [
+        'node_modules/baguettebox.js/src/baguetteBox.js',
+        'node_modules/lazysizes/lazysizes.js',
+        'node_modules/slick-carousel/slick/slick.js',
+        'scripts/*.js'
+    ],
     images: ['images/*', 'images/**/*'],
     styles: ['styles.scss']
 };
@@ -134,6 +140,13 @@ gulp.task('makeJpg', function () {
     }))
     .pipe(gulp.dest('images/'))
 });
+gulp.task('makeThumbs', function () {
+    return gulp.src(paths.images)
+    .pipe(imageResize({
+        width : 616 // 35em, set for text readability
+      }))
+    .pipe(gulp.dest('images/thumb/'))
+});
 gulp.task('makeWebp', function () {
     return gulp.src(paths.images)
         .pipe(webp())
@@ -145,7 +158,7 @@ gulp.task('imageOptim', function () {
     .pipe(gulp.dest('../assets/img/'))
 });
 
-gulp.task('images', ['makeJpg', 'makeWebp', 'imageOptim']);
+gulp.task('images', ['makeJpg', 'makeThumbs', 'makeWebp', 'imageOptim']);
 
 // Task: a11y
 gulp.task('a11y', function () {
