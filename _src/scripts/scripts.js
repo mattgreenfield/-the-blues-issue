@@ -7,7 +7,7 @@
 // Get gigs from facebook JS api
 // Required the moment.js library
 function gigs(options) {
-    var defaults = {
+    const defaults = {
         element: document.getElementById('gigs-list'),
         limit: 10
     }
@@ -92,11 +92,9 @@ function gigs(options) {
         // Return object
         // convert time to a human readable format
         formatDate: function(date){
-
-            var formatedDate = {};
-            formatedDate.day = moment(date).format("ddd Do MMM YYYY");
-            formatedDate.time = moment(date).format("ha");
-            return formatedDate;
+            var day = moment(date).format("ddd Do MMM YYYY"),
+                time = moment(date).format("ha");
+            return {day, time};
         }
 
     }
