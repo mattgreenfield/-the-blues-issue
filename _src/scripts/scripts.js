@@ -37,7 +37,7 @@ function gigs(options) {
                         time_filter: "upcoming"
                     },
                     function (response) {
-                      console.log(response);
+                    //   console.log(response);
                       if (response && !response.error) {
                         self.render(response.data, self.options.element);
                       }

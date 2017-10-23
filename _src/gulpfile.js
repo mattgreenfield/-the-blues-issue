@@ -1,6 +1,5 @@
 // Gulp Config File
 
-
 //
 // VARIABLES
 //
@@ -24,13 +23,19 @@ var gulp = require('gulp'),
     webp = require('gulp-webp'),
     imageResize = require('gulp-image-resize'),
 
+
+    // Scripts
+    babel = require('gulp-babel'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+
     // Serving to localhost
     express = require('express'),
 
     shell = require('gulp-shell'),
 
     // Error handling, hmmmm.....
-    // notify = require("gulp-notify"),
+    notify = require("gulp-notify"),
     plumber = require('gulp-plumber'),
 
     // Critical Path CSS
@@ -50,6 +55,7 @@ var paths = {
         'node_modules/baguettebox.js/src/baguetteBox.js',
         'node_modules/lazysizes/lazysizes.js',
         'node_modules/slick-carousel/slick/slick.js',
+        'node_modules/moment/moment.js',
         'scripts/*.js'
     ],
     images: ['images/*', 'images/**/*'],
@@ -82,14 +88,29 @@ gulp.task('sass', function () {
 // Task: Scripts
 gulp.task('scripts', function() {
     gulp.src(paths.scripts)
+    .pipe(plumber({ errorHandler: function(err) {
+        notify.onError({
+            title: "Gulp error in " + err.plugin,
+            message:  err.toString()
+        })(err);
+    }}))
+    // .pipe(sourcemaps.init())
+    .pipe(babel({
+        ignore: ['baguetteBox.js', 'moment.js'],
+        presets: ['env']
+    }))
     .pipe(concat('scripts.min.js'))
-    .pipe(gulp.dest('../assets/js'));
+    .pipe(uglify())
+    // .pipe(sourcemaps.write('.'))
+
+    .pipe(gulp.dest('../assets/js'))
+    .pipe(gulp.dest('../_site/assets/scripts/')); // Copy to static dir to avoid jekyll having to run again just to copy it over
 });
 
 // Task: Jekyll
 // Run jekyll and put the files in the `_/site` directory
 gulp.task('jekyll', shell.task([
-  'jekyll build --config ../_config.yml --source ../ --destination ../_site',
+  'jekyll build --config _dev-config.yml --source ../ --destination ../_site',
 ]));
 
 
