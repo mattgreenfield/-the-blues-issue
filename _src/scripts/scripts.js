@@ -124,4 +124,6 @@ $('#quote-slider').slick({
 });
 
 // Lightbox / Gallery
-baguetteBox.run('.baguette-gallery');
+if ( $('.baguette-gallery').length ) {
+    baguetteBox.run('.baguette-gallery');
+}
