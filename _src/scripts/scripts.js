@@ -55,7 +55,7 @@ function gigs(options) {
                 // reverse and limit the gigs list to show the upcoming gigs first
                 _data = _data.reverse().slice(0, limit);
 
-            for(var gig of _data){
+            for(let gig of _data){
                 // console.log(gig);
                 markup += this.template(gig.id, gig.name.toLowerCase(), gig.description, gig.place, gig.start_time);
             }
