@@ -8,11 +8,11 @@ layout: default
         {% if image.path contains 'archive' %}
         {% if image.extname contains 'jpg' %}
             <li>
-                <a href="{{ site.baseurl }}assets/img/archive/{{ image.basename }}.jpg">
+                <a href="{{ site.baseurl }}/assets/img/archive/{{ image.basename }}.jpg">
                     <picture>
-                        <source data-srcset="{{ site.baseurl }}assets/img/thumb/archive/{{ image.basename }}.webp" type="image/webp">
-                        <source data-srcset="{{ site.baseurl }}assets/img/thumb/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
-                        <img data-src="{{ site.baseurl }}assets/img/thumb/archive/{{ image.basename }}.jpg"  alt="" class="lazyload">
+                        <source data-srcset="{{ site.baseurl }}/assets/img/thumb/archive/{{ image.basename }}.webp" type="image/webp">
+                        <source data-srcset="{{ site.baseurl }}/assets/img/thumb/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
+                        <img data-src="{{ site.baseurl }}/assets/img/thumb/archive/{{ image.basename }}.jpg"  alt="" class="lazyload">
                     </picture>
                 </a>
             </li>
