@@ -11,7 +11,7 @@ function gigs(options) {
         element: document.getElementById('gigs-list'),
         limit: 10
     }
-    
+
     // check the element for a data-limit attr
     if (defaults.element.dataset.limit) {
         defaults.limit = defaults.element.dataset.limit;
@@ -51,7 +51,7 @@ function gigs(options) {
             var self = this,
                 markup = "",
                 limit = Math.min(self.options.limit, _data.length);
-                
+
                 // reverse and limit the gigs list to show the upcoming gigs first
                 _data = _data.reverse().slice(0, limit);
 
@@ -125,3 +125,26 @@ $('#quote-slider').slick({
 if ( $('.baguette-gallery').length ) {
     baguetteBox.run('.baguette-gallery');
 }
+
+
+//
+// Register Service worker
+(function() {
+  'use strict';
+
+  // check for service worker support
+  if ( !('serviceWorker' in navigator) ) {
+    console.log('service workers not supported');
+    return;
+  }
+
+  // install the service worker's script.
+  navigator.serviceWorker.register('assets/service-worker.js')
+  .then( registration => {
+    console.log('registered at scope:', registration.scope);
+  })
+  .catch( error => {
+    console.log('registration failed:', error)
+  });
+
+})();
