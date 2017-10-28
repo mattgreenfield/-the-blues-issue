@@ -207,6 +207,6 @@ gulp.task('watch', ['serve'], function () {
 });
 
 
-gulp.task('default', ['sass', 'penthouse', 'scripts', 'images', 'jekyll', 'serve', 'watch']);
+gulp.task('default', ['sass', 'penthouse', 'scripts', 'jekyll', 'serve', 'watch']);
 gulp.task('optimise', ['jekyll', 'serve', 'penthouse', 'images' ]);
 gulp.task('reports', ['a11y' ]);
