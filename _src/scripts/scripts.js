@@ -139,7 +139,7 @@ if ( $('.baguette-gallery').length ) {
   }
 
   // install the service worker's script.
-  navigator.serviceWorker.register('assets/service-worker.js')
+  navigator.serviceWorker.register('service-worker.js')
   .then( registration => {
     console.log('registered at scope:', registration.scope);
   })
