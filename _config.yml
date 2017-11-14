@@ -1,6 +1,6 @@
 name: "The Blues Issue"
 url: www.thebluesissue.co.uk
-baseurl: /the-blues-issue
+baseurl: ""
 
 navigation:
   - title: Home
