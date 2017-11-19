@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito|Ultra" rel="stylesheet">
 
 </head>
-<body>
+<body class="page-{{ page.title }}">
     <div id="fb-root"></div>
     <script>
         window.fbAsyncInit = function() {
@@ -27,7 +27,7 @@
             var gigsList = document.getElementById('gigs-list');
             if(gigsList){
                 $(document).ready(function(){
-                    gigs().init();    
+                    gigs().init();
                 });
             }
 
@@ -65,6 +65,6 @@
 
     <!-- Our scripts -->
     <script src="{{ site.baseurl }}/assets/js/scripts.min.js"></script>
-    
+
 </body>
 </html>
