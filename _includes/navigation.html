@@ -1,4 +1,4 @@
-<ul class="reset-list list--inline">
+<ul class="reset-list {{ include.class }}">
     {% for page in site.navigation %}
     <li>
         <a href="{{site.baseurl}}{{page.url}}">{{ page.title }}</a>

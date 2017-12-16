@@ -6,10 +6,15 @@ layout: default
     <ul class="page-constraint reset-list">
         {% for album in page.albums %}
             <li>
-                <img src="assets/img/discography/{{ album.image }}.jpg" alt="{{ album.name }} album artwork">
-                <h2>{{ album.name }}</h2>
-                <span>{{ album.released }}</span>
-                <p>{{ album.info }}</p>
+                <div class="media">
+                    <img src="assets/img/discography/{{ album.image }}.jpg" alt="{{ album.name }} album artwork">
+                    <div>
+                        <h2>{{ album.name }}</h2>
+                        <span>{{ album.released }}</span>
+                        <p>{{ album.info }}</p>
+                 
+                    </div>
+                </div>
             </li>
         {% endfor; %}
     </ul>

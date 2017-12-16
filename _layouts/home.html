@@ -4,17 +4,17 @@ classes: "page-constraint page-constraint--large"
 ---
 
 <section>
-    <h2>Upcoming Gigs</h2>
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vw6EMW_E8eE" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section>
+    <h2>Next Gig</h2>
     <ul class="reset-list" id='gigs-list' data-limit="1">
         <li>Loading...</li>
     </ul>
     <a href="{{ site.baseurl }}/gigs.html">View All</a>
-</section>
-
-<section>
-    <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vw6EMW_E8eE" frameborder="0" allowfullscreen></iframe>
-    </div>
 </section>
 
 <section>
@@ -34,5 +34,4 @@ classes: "page-constraint page-constraint--large"
             </li>
         {% endfor %}
     </ul>
-
 </section>

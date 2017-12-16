@@ -1,12 +1,22 @@
 <footer class="page-footer">
-    {% include navigation.html %}
+    <a href="{{ site.baseurl }}/" class="logo">
+        <img src="{{ site.baseurl }}/assets/img/logo.jpg" alt="{{ site.name}} Logo">
+    </a>
 
-    <ul class="reset-list list--inline">
+    {% include navigation.html class="util-column-2 util-reset-margin" %}
+
+    <ul class="reset-list list--inline social-icons">
         <li>
-            <a href="https://www.facebook.com/TheBluesIssue">Facebook</a>
+            <a href="https://www.facebook.com/TheBluesIssue">
+                <span class="a11y-hidden">Facebook</span>
+                <object data="assets/icons/facebook.svg" type="image/svg+xml"></object>
+            </a>
         </li>
         <li>
-            <a href="https://www.youtube.com/channel/UCoykz-cOM0CI1EuuwRlqVeQ">Youtube</a>
+            <a href="https://www.youtube.com/channel/UCoykz-cOM0CI1EuuwRlqVeQ">
+                <span class="a11y-hidden">Youtube</span>
+                <object data="assets/icons/youtube.svg" type="image/svg+xml"></object>
+            </a>
         </li>
     </ul>
     <small>Copyright The Blues Issue {{ 'now' | date: "%Y" }}</small>

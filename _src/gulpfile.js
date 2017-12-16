@@ -58,7 +58,7 @@ var paths = {
         'node_modules/moment/moment.js',
         'scripts/*.js'
     ],
-    images: ['images/*', 'images/**/*'],
+    images: ['images/**/*.jpg'],
     styles: ['styles.scss']
 };
 
@@ -174,12 +174,23 @@ gulp.task('makeWebp', function () {
         .pipe(gulp.dest('../assets/img/'))
 });
 gulp.task('imageOptim', function () {
-    gulp.src('images/**/*.jpg')
+    gulp.src(paths.images)
     .pipe(imagemin())
     .pipe(gulp.dest('../assets/img/'))
 });
+gulp.task('moveSVG', function () {
+    return gulp.src('images/*.svg')
+        .pipe(gulp.dest('../assets/img/'))
+});
 
-gulp.task('images', ['makeJpg', 'makeThumbs', 'makeWebp', 'imageOptim']);
+gulp.task('images', ['makeJpg', 'makeThumbs', 'makeWebp', 'imageOptim', 'moveSVG']);
+
+
+// icons
+gulp.task('icons', function () {
+    return gulp.src('icons/*.svg')
+        .pipe(gulp.dest('../assets/icons/'))
+});
 
 // Task: a11y
 gulp.task('a11y', function () {

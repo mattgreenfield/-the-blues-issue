@@ -68,10 +68,13 @@ function gigs(options) {
         template: function(id, name, description, place, date){
             var self = this,
                 formatedDate = self.formatDate(date),
-                placeMarkup = "";
+                placeMarkup = name;
 
             if (place) {
-                placeMarkup = `<span itemprop="name" class="gig__venue">${place.name}</span>
+                placeMarkup = `<div>
+                                    <div>${name}</div>
+                                    <div itemprop="name" class="gig__venue">${place.name}</div>
+                                </div>
                                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="gig__town">
                                     <span itemprop="addressLocality">${place.location.city}</span>
                                 </div>`
@@ -83,7 +86,6 @@ function gigs(options) {
                     <span>${formatedDate.day}</span>
                 </div>
                 <div itemprop="location" itemscope itemtype="http://schema.org/Place" class="gig__location">
-                    ${name}
                     ${placeMarkup}
                 </div>
             </li>`;

@@ -77,13 +77,21 @@ img {
     text-align: center
 }
 
+.util-column-2 {
+    column-count: 2;
+}
+
+.util-reset-margin * {
+    margin-top: 0;
+}
+
 //
 // Resets
 
 .reset-list {
     list-style-type: none;
     padding-left: 0;
-    margin: 0;
+    margin-left: 0;
 }
 
 
@@ -92,6 +100,11 @@ img {
 // Our Styles
 // -----------------------------
 
+// Links
+a {
+    color: $blue;
+    font-weight: bold;
+}
 
 // Page Constraint
 .page-constraint {
@@ -144,14 +157,33 @@ h1 {
 .page-footer {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: 4em;
 
     small {
         flex-basis: 100%;
-        margin-top: 0;
+        font-size: 0.8em;
     }
 
-    .list--inline:first-child {
+    .logo {
+        width: 100px;
+        margin-right: 2em;
+        display: block;
+    }
+
+    // icons
+    object {
+        width: 40px;
+        height:  40px;
+        pointer-events: none;
+    }
+
+    .social-icons {
         flex: 1;
+        text-align: right;
+        a {
+            display: block;
+        }
     }
 }
 
@@ -209,8 +241,12 @@ h1 {
 
 .gig {
     display: flex;
-    align-items: flex-end;
+    flex-wrap: wrap;
     text-transform: capitalize;
+
+    * {
+        margin: 0;
+    }
 }
 
 .gig__date {
@@ -231,12 +267,11 @@ h1 {
 .gig__location {
 
     display: flex;
-    align-items: flex-end;
+    min-width: 450px;
 
     &,
     > * {
         flex: 1;
-        margin-left: 1em;
     }
 
     .button {
@@ -273,6 +308,7 @@ a[href="#page-main"] {
 .driver {
     padding: 20px 0;
     background-image: url('data:image/svg+xml;utf8,<svg width="243" height="276" viewBox="0 0 243 276" xmlns="http://www.w3.org/2000/svg"><path d="M0 10.5L243 0l-34.5 276-171.004-19" fill="#EFEFEF" fill-rule="evenodd"/></svg>');
+    background-image: url('../img/driver.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -290,7 +326,17 @@ a[href="#page-main"] {
     }
 }
 
+// 
+// Media
 
+.media {
+    display: flex;
+
+    img {
+        width: 30%;
+        margin-right: 2em;
+    }
+}
 
 //
 // PAGES
