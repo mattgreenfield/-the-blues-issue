@@ -1,37 +1,39 @@
 ---
 layout: default
-classes: "page-constraint page-constraint--large"
 ---
 
-<section>
-    <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vw6EMW_E8eE" frameborder="0" allowfullscreen></iframe>
-    </div>
-</section>
+<div class="page-grid">
 
-<section>
-    <h2>Next Gig</h2>
-    <ul class="reset-list" id='gigs-list' data-limit="1">
-        <li>Loading...</li>
-    </ul>
-    <a href="{{ site.baseurl }}/gigs.html">View All</a>
-</section>
+    <section>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vw6EMW_E8eE" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
-<section>
-    <div class="driver">
-        <h2>Want to buy our music?</h2>
-        <p>Buy CD's, downloads and much more</p>
-        <a href="{{ site.baseurl }}/discography.html" class="button button--ghost">Shop Now</a>
-    </div>
-</section>
+    <section>
+        <h2>Next Gig</h2>
+        <ul class="reset-list" id='gigs-list' data-limit="1">
+            <li>Loading...</li>
+        </ul>
+        <a href="{{ site.baseurl }}/gigs.html">View All</a>
+    </section>
 
-<section>
-    <ul class="reset-list" id="quote-slider">
-        {% for quote in site.quotes %}
-            <li>
-                <blockquote>{{ quote.quote }}</blockquote>
-                {{ quote.author }}
-            </li>
-        {% endfor %}
-    </ul>
-</section>
+    <section>
+        <div class="driver">
+            <h2>Want to buy our music?</h2>
+            <p>Buy CD's, downloads and much more</p>
+            <a href="{{ site.baseurl }}/discography.html" class="button button--ghost">Shop Now</a>
+        </div>
+    </section>
+
+    <section>
+        <ul class="reset-list" id="quote-slider">
+            {% for quote in site.quotes %}
+                <li>
+                    <blockquote>{{ quote.quote }}</blockquote>
+                    {{ quote.author }}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>

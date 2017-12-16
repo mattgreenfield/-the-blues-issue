@@ -2,13 +2,6 @@
 $blue: #4A5C9C;
 $font-family-title: 'Ultra', serif;
 
-// Lightbox
-@import "node_modules/baguettebox.js/src/baguetteBox.scss";
-
-// Slick
-@import "node_modules/slick-carousel/slick/slick.scss";
-@import "node_modules/slick-carousel/slick/slick-theme.scss";
-
 * {
     box-sizing: border-box;
 }
@@ -95,6 +88,34 @@ img {
 }
 
 
+//
+// Libraries
+
+// Lightbox
+@import "node_modules/baguettebox.js/src/baguetteBox.scss";
+
+// Slick
+$slick-arrow-color: transparent;
+$slick-dot-color: red;
+$slick-dot-size: 30px;
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
+
+.slick-slider {
+    .slick-arrow {
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 35px;
+        width: 35px;
+    }
+    .slick-next {
+        background-image: url('../icons/arrow-right.svg');
+    }
+    .slick-prev {
+        background-image: url('../icons/arrow-left.svg');
+    }
+}
+
 
 //
 // Our Styles
@@ -122,6 +143,10 @@ a {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 40px;
+
+    @media screen and (max-width: 850px ) {
+        display: block;
+    }
 }
 
 // Page Heading
@@ -307,7 +332,6 @@ a[href="#page-main"] {
 // Driver
 .driver {
     padding: 20px 0;
-    background-image: url('data:image/svg+xml;utf8,<svg width="243" height="276" viewBox="0 0 243 276" xmlns="http://www.w3.org/2000/svg"><path d="M0 10.5L243 0l-34.5 276-171.004-19" fill="#EFEFEF" fill-rule="evenodd"/></svg>');
     background-image: url('../img/driver.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -346,5 +370,25 @@ a[href="#page-main"] {
 .page-Home {
     h1 {
         @extend %a11y-hidden;
+    }
+    .page-grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        @media screen and (max-width: 850px ) {
+            display: block;
+        }
+
+        section {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        section:nth-child(3) {
+            grid-column-end: 2;
+        }
+        section:nth-child(4) {
+            grid-column-start: 2;
+        }
     }
 }

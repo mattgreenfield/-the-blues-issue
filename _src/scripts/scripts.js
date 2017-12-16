@@ -1,7 +1,5 @@
 "use strict";
 
-// import * as foo from './moment.min.js';
-
 //
 // Gigs
 // Get gigs from facebook JS api
@@ -94,7 +92,7 @@ function gigs(options) {
         // Return object
         // convert time to a human readable format
         formatDate: function(date){
-            var day = moment(date).format("ddd Do MMM YYYY"),
+            var day = moment(date).format("DD MMM YYYY"),
                 time = moment(date).format("ha");
             return {day, time};
         }
@@ -117,7 +115,7 @@ $('#image-gallery').slick({
 
 // home page
 $('#quote-slider').slick({
-  arrows: true,
+  dots: true,
   infinite: true,
   speed: 300,
   slidesToShow: 1,
