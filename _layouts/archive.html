@@ -3,17 +3,13 @@ layout: default
 ---
 
 {% if page.title == "Archive" %}
-    <ul class="page-constraint reset-list baguette-gallery">
+    <ul class="page-constraint page-constraint--large reset-list baguette-gallery">
     {% for image in site.static_files %}
-        {% if image.path contains 'archive' %}
+        {% if image.path contains 'img/archive/thumb' %}
         {% if image.extname contains 'jpg' %}
             <li>
                 <a href="{{ site.baseurl }}/assets/img/archive/{{ image.basename }}.jpg">
-                    <picture>
-                        <source data-srcset="{{ site.baseurl }}/assets/img/thumb/archive/{{ image.basename }}.webp" type="image/webp">
-                        <source data-srcset="{{ site.baseurl }}/assets/img/thumb/archive/{{ image.basename }}.jpg" type="image/jpeg"> 
-                        <img data-src="{{ site.baseurl }}/assets/img/thumb/archive/{{ image.basename }}.jpg"  alt="" class="lazyload">
-                    </picture>
+                    <img data-src="{{ site.baseurl }}/assets/img/archive/thumb/{{ image.basename }}.jpg"  alt="" class="lazyload">
                 </a>
             </li>
         {% endif %}

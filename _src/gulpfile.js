@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     // optipng = require('imagemin-optipng'),
     webp = require('gulp-webp'),
     imageResize = require('gulp-image-resize'),
+    changeCase = require('change-case'),
 
 
     // Scripts
@@ -162,19 +163,20 @@ gulp.task('makeJpg', function () {
     .pipe(gulp.dest('images/'))
 });
 gulp.task('makeThumbs', function () {
-    return gulp.src(paths.images)
+    return gulp.src('images/archive/*')
     .pipe(imageResize({
         width : 616 // 35em, set for text readability
-      }))
-    .pipe(gulp.dest('images/thumb/'))
-});
-gulp.task('makeWebp', function () {
-    return gulp.src(paths.images)
-        .pipe(webp())
-        .pipe(gulp.dest('../assets/img/'))
+    }))
+    .pipe(imagemin())
+    // .pipe(gulp.dest('../assets/img/archive/thumb/'))
+    // .pipe(webp())
+    .pipe(gulp.dest('../assets/img/archive/thumb/'))
 });
 gulp.task('imageOptim', function () {
-    gulp.src(paths.images)
+    gulp.src('images/*.jpg, images/**/*.jpg')
+    .pipe(imageResize({
+        width: 1000 // max width
+    }))
     .pipe(imagemin())
     .pipe(gulp.dest('../assets/img/'))
 });
@@ -183,7 +185,7 @@ gulp.task('moveSVG', function () {
         .pipe(gulp.dest('../assets/img/'))
 });
 
-gulp.task('images', ['makeJpg', 'makeThumbs', 'makeWebp', 'imageOptim', 'moveSVG']);
+gulp.task('images', ['makeJpg', 'imageOptim', 'makeThumbs', 'moveSVG']);
 
 
 // icons

@@ -96,7 +96,7 @@ img {
 
 // Slick
 $slick-arrow-color: transparent;
-$slick-dot-color: red;
+$slick-dot-color: $blue;
 $slick-dot-size: 30px;
 @import "node_modules/slick-carousel/slick/slick.scss";
 @import "node_modules/slick-carousel/slick/slick-theme.scss";
@@ -350,7 +350,7 @@ a[href="#page-main"] {
     }
 }
 
-// 
+//
 // Media
 
 .media {
@@ -358,9 +358,46 @@ a[href="#page-main"] {
 
     img {
         width: 30%;
+        height: 100%;
         margin-right: 2em;
     }
 }
+
+
+//
+// Gallery
+
+.baguette-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+
+    a {
+        display: block;
+        height: 100%;
+    }
+    * + * {
+        margin-top: 0;
+    }
+
+    li {
+        position: relative;
+    }
+
+    img {
+        display: block;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    li:nth-child(4n) {
+        grid-column-end: span 2;
+        grid-row-end: span 2;
+    }
+
+}
+
 
 //
 // PAGES
