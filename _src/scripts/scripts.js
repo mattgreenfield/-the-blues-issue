@@ -9,7 +9,7 @@ function gigs(options) {
         element: document.getElementById('gigs-list'),
         limit: 10
     }
-    
+
     // check the element for a data-limit attr
     if (defaults.element.dataset.limit) {
         defaults.limit = defaults.element.dataset.limit;
@@ -49,13 +49,13 @@ function gigs(options) {
             var self = this,
                 markup = "",
                 limit = Math.min(self.options.limit, _data.length);
-                
+
                 // reverse and limit the gigs list to show the upcoming gigs first
                 _data = _data.reverse().slice(0, limit);
 
             for(let gig of _data){
-                // console.log(gig);
-                markup += this.template(gig.id, gig.name.toLowerCase(), gig.description, gig.place, gig.start_time);
+                console.log(gig);
+                markup += this.template(gig.id, gig.name, gig.description, gig.place, gig.start_time);
             }
 
             _element.innerHTML = markup;
@@ -85,6 +85,9 @@ function gigs(options) {
                 </div>
                 <div itemprop="location" itemscope itemtype="http://schema.org/Place" class="gig__location">
                     ${placeMarkup}
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/events/${id}" class="button">More Info</a>
                 </div>
             </li>`;
         },

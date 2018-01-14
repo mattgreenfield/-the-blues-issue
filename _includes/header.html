@@ -1,11 +1,29 @@
 <a href="#page-main">Skip to main content</a>
 
-<div class="logo util-text-align-center">
-    <a href="{{ site.baseurl }}/">
-        <img src="{{ site.baseurl }}/assets/img/logo.jpg"  alt="{{ site.name}} Logo">
-    </a>
-</div>
+<header class="page-header page-constraint page-constraint--large">
+    {% if page.title != "Home" %}
+    <div class="logo">
+        <a href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/assets/img/logo.jpg"  alt="{{ site.name}} Logo">
+        </a>
+    </div>
+    {% endif %}
 
-<nav role="navigation" class="util-text-align-center page-nav">
-    {% include navigation.html class="list--inline" %}
-</nav>
+    <nav role="navigation" class="page-nav">
+        <ul class="reset-list list--inline">
+            <li>
+                <a href="{{site.baseurl}}/about.html">About</a>
+            </li>
+            <li>
+                <a href="{{site.baseurl}}/gigs.html">Gigs</a>
+            </li>
+            <li>
+                <a href="{{site.baseurl}}/archive.html">Gallery</a>
+            </li>
+            <li>
+                <a href="{{site.baseurl}}/contact.html">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>

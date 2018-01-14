@@ -180,6 +180,11 @@ gulp.task('imageOptim', function () {
     .pipe(imagemin())
     .pipe(gulp.dest('../assets/img/'))
 });
+gulp.task('moveBg', function () {
+    gulp.src('images/home-bg.jpg')
+    .pipe(imagemin())
+    .pipe(gulp.dest('../assets/img/'))
+});
 gulp.task('moveSVG', function () {
     return gulp.src('images/*.svg')
         .pipe(gulp.dest('../assets/img/'))

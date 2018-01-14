@@ -15,12 +15,12 @@
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start':
-                new Date().getTime(), event: 'gtm.js'        
+                new Date().getTime(), event: 'gtm.js'
             });
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : ''; 
-            j.async = true; 
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
             j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PR7Z6RL');
     </script>
@@ -69,13 +69,12 @@
 
     <main id="page-main" class="{{ layout.classes }}">
 
-        {% assign page_title = page.title %}
-        {% if page.title == "home" %}
-            {% assign page_title = site.name %}
+        {% if page.title != "Home" %}
+            <div class="page-constraint page-constraint--large">
+                <h1 class="heading-bar">{{ page.title }}</h1>
+            </div>
         {% endif %}
-        <div class="page-constraint page-constraint--large">
-            <h1>{{ page_title }}</h1>
-        </div>
+
 
         {{ content }}
 
