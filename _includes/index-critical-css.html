@@ -25,8 +25,7 @@ body {
 }
 
 h1,
-h2,
-p {
+h2 {
   margin-bottom: 0;
 }
 
@@ -41,6 +40,10 @@ a[href="#page-main"] {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.util-no-margin {
+  margin: 0;
 }
 
 .reset-list {
@@ -132,8 +135,11 @@ a {
 }
 
 .logo .logo__bottom {
-  display: block;
-  text-align: right;
+  background-color: #25387f;
+  display: inline;
+  float: right;
+  padding: .1em .2em;
+  margin-top: -.2em;
 }
 
 .list--inline>li {
@@ -175,26 +181,21 @@ a {
 
 @media (max-width:980px) {
   .page-Home .home-header .logo {
-    font-size: 1.8em;
+    font-size: 5vw;
   }
 }
 
-.page-Home .page-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-@media screen and (max-width:850px) {
-  .page-Home .page-grid {
-    display: block;
+@media screen and (min-width:850px) {
+  .page-Home .page-grid>section {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 4em;
+    width: calc(100% - 400px);
   }
-}
 
-.page-Home .page-grid section {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-.page-Home .page-grid section:nth-child(3) {
-  grid-column-end: 2;
+  .page-Home .page-grid>aside {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+  }
 }

@@ -70,8 +70,7 @@ function gigs(options) {
 
             if (place) {
                 placeMarkup = `<div>
-                                    <div>${name}</div>
-                                    <div itemprop="name" class="gig__venue">${place.name}</div>
+                                    <span>${name}</span><span itemprop="name" class="gig__venue">, ${place.name}</span>
                                 </div>
                                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="gig__town">
                                     <span itemprop="addressLocality">${place.location.city}</span>
@@ -119,6 +118,7 @@ $('#image-gallery').slick({
 // home page
 $('#quote-slider').slick({
   dots: true,
+  arrows: false,
   infinite: true,
   speed: 300,
   slidesToShow: 1,
