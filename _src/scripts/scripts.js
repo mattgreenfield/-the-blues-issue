@@ -54,7 +54,7 @@ function gigs(options) {
                 _data = _data.reverse().slice(0, limit);
 
             for(let gig of _data){
-                console.log(gig);
+                // console.log(gig);
                 markup += this.template(gig.id, gig.name, gig.description, gig.place, gig.start_time);
             }
 
