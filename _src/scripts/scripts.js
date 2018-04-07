@@ -30,7 +30,7 @@ function gigs(options) {
             if(FB){
                 // get facebook events (gigs)
                 FB.api(
-                    "/549605348398438/events?access_token=288569771678453|LQyod8KWaZceMpRmug3WE-tPbCo",
+                    "/549605348398438/events?access_token=EAACEdEose0cBAKzQuXJl9WW5BzXpOOAZAbDu5LZAXDZAY0QHREwaiQz454lgvBnlTa6T4ZCTcZC5eT0K7jYxx0yrj9rhjgn21yKcsrGcGWdvCPcC3dw86T4cK05WsIieS37CSCSh13JcInvJBLLh2zyZCZCElFbd67jIbcnBC2sJUysebANKPrp3ByY1xocd2gZD",
                     {
                         time_filter: "upcoming"
                     },
